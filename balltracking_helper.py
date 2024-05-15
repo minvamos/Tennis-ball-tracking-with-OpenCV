@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 
-cap = cv2.VideoCapture('/Users/minsik/development/Code_and_dataset/game.mp4') #  game,game2,game3 영상 중 선택하여 호출 
+cap = cv2.VideoCapture('game.mp4') #  game,game2,game3 영상 중 선택하여 호출 
 bgSubtractor = cv2.createBackgroundSubtractorKNN(history=10, dist2Threshold=200.0)
 kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
 
@@ -10,7 +10,7 @@ kernel_size = 13
 kernel_dilation = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (kernel_size, kernel_size))
 kernel_open = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
 
-#game (원하는 데모 영상에 따라 코드 선택)
+#game (can be chosen or adjusted by video.)
 lower_color = np.array([21, 215, 220])  
 upper_color = np.array([38, 255, 255])
 
